@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "reflection.html",
+    "href": "reflection.html",
+    "title": "Learning Reflection",
+    "section": "",
+    "text": "Note1. Technical Mastery: Beyond the Spreadsheet\n\n\n\nAs an Accounting and Finance student, my traditional focus was on static reporting. This module introduced me to a reproducible workflow: * Git & Version Control: Moving from bulk uploads to incremental commits showed me how to professionally track progress. * Quarto Ecosystem: Integrating Python code directly into digital reports ensures data integrity—a critical requirement for modern auditing."
+  },
+  {
+    "objectID": "reflection.html#future-strategic-vision",
+    "href": "reflection.html#future-strategic-vision",
+    "title": "Learning Reflection",
+    "section": "Future Strategic Vision",
+    "text": "Future Strategic Vision\nThese skills are directly applicable to the modern financial sector. I plan to leverage automated reporting to enhance audit efficiency and use data analytics for strategic SME consulting. This ePortfolio serves as a foundation for my journey as a tech-enabled financial professional."
+  },
+  {
+    "objectID": "projects/list/project1_financial_analysis.html",
+    "href": "projects/list/project1_financial_analysis.html",
+    "title": "SME Strategic Financial Diagnostic",
+    "section": "",
+    "text": "View Code (Python)\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\n\nNAVY = \"#003366\"\nGOLD = \"#C5A059\"\nGREY = \"#F2F2F2\"\nDARK_GREY = \"#404040\"\n\n\nplt.style.use('seaborn-v0_8-white')\nplt.rcParams.update({\n    'font.family': 'sans-serif',\n    'font.sans-serif': ['Arial'],\n    'axes.edgecolor': DARK_GREY,\n    'axes.labelcolor': DARK_GREY,\n    'xtick.color': DARK_GREY,\n    'ytick.color': DARK_GREY\n})"
+  },
+  {
+    "objectID": "projects/list/project1_financial_analysis.html#executive-environment-setup",
+    "href": "projects/list/project1_financial_analysis.html#executive-environment-setup",
+    "title": "SME Strategic Financial Diagnostic",
+    "section": "",
+    "text": "View Code (Python)\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\n\nNAVY = \"#003366\"\nGOLD = \"#C5A059\"\nGREY = \"#F2F2F2\"\nDARK_GREY = \"#404040\"\n\n\nplt.style.use('seaborn-v0_8-white')\nplt.rcParams.update({\n    'font.family': 'sans-serif',\n    'font.sans-serif': ['Arial'],\n    'axes.edgecolor': DARK_GREY,\n    'axes.labelcolor': DARK_GREY,\n    'xtick.color': DARK_GREY,\n    'ytick.color': DARK_GREY\n})"
+  },
+  {
+    "objectID": "projects/list/project1_financial_analysis.html#core-financial-datasets-20222025",
+    "href": "projects/list/project1_financial_analysis.html#core-financial-datasets-20222025",
+    "title": "SME Strategic Financial Diagnostic",
+    "section": "2. Core Financial Datasets (2022–2025)",
+    "text": "2. Core Financial Datasets (2022–2025)\n\n\nView Code (Python)\n#data\nimport pandas as pd\n\n# --- 1. Dataset Initialization ---\n# Defining historical and projected financial data for analysis\nfinancial_data = {\n    'Year': [2022, 2023, 2024, 2025],\n    'Revenue': [185000, 210000, 235000, 268000],\n    'COGS': [95000, 108000, 119000, 132000],\n    'Op_Expenses': [61500, 67800, 74500, 86200],\n    'Net_Profit': [28500, 34200, 41500, 49800],\n    'Current_Assets': [46000, 52000, 59000, 67000],\n    'Current_Liabilities': [22000, 24000, 26000, 29000]\n}\n\ndf = pd.DataFrame(financial_data)\n\n# --- 2. Financial Calculation Logic ---\n# Deriving key profitability and liquidity metrics \ndf['Gross_Profit'] = df['Revenue'] - df['COGS']\ndf['GPM'] = (df['Gross_Profit'] / df['Revenue']) * 100\ndf['NPM'] = (df['Net_Profit'] / df['Revenue']) * 100\ndf['Current_Ratio'] = df['Current_Assets'] / df['Current_Liabilities']\n\n# --- 3. Strategic KPI Summary Report ---\n# Formatting the output table to align with professional accounting standards\nstyled_df = df[['Year', 'GPM', 'NPM', 'Current_Ratio']].copy()\nstyled_df.columns = ['Fiscal Year', 'Gross Margin (%)', 'Net Margin (%)', 'Liquidity (Ratio)']\n\n# Print formatted summary for the ePortfolio display\nprint(\"\\n\" + \"=\" * 70)\nprint(f\"{'STRATEGIC KPI SUMMARY':^70}\")\nprint(\"=\" * 70)\nprint(styled_df.to_string(index=False, float_format=lambda x: f'{x:.2f}'))\nprint(\"=\" * 70)\n\n\n\n======================================================================\n                        STRATEGIC KPI SUMMARY                         \n======================================================================\n Fiscal Year  Gross Margin (%)  Net Margin (%)  Liquidity (Ratio)\n        2022             48.65           15.41               2.09\n        2023             48.57           16.29               2.17\n        2024             49.36           17.66               2.27\n        2025             50.75           18.58               2.31\n======================================================================"
+  },
+  {
+    "objectID": "projects/list/project1_financial_analysis.html#profitability-engine-dual-axis-trend-analysis",
+    "href": "projects/list/project1_financial_analysis.html#profitability-engine-dual-axis-trend-analysis",
+    "title": "SME Strategic Financial Diagnostic",
+    "section": "3. Profitability Engine: Dual-Axis Trend Analysis",
+    "text": "3. Profitability Engine: Dual-Axis Trend Analysis\n\n\nView Code (Python)\n# Reduce figsize to (7, 4.5) for a more compact output\nfig, ax1 = plt.subplots(figsize=(7, 4.5))\n\n# Plot Revenue bars (using defined NAVY color)\nbars = ax1.bar(df['Year'], df['Revenue'], color=NAVY, alpha=0.85, label='Total Revenue', width=0.4)\nax1.set_ylabel('Revenue (EUR)', fontweight='bold', color=NAVY, fontsize=9)\nax1.tick_params(axis='y', labelcolor=NAVY, labelsize=8)\n\n# Create secondary y-axis for profit margin\nax2 = ax1.twinx()\nax2.plot(df['Year'], df['NPM'], color=GOLD, marker='D', linewidth=2.5, markersize=6, label='Net Profit Margin (%)')\nax2.set_ylabel('Net Margin (%)', fontweight='bold', color=GOLD, fontsize=9)\nax2.tick_params(axis='y', labelcolor=GOLD, labelsize=8)\n\n# Aesthetic optimizations\nplt.title('Performance Scaling: Revenue vs. Profitability', fontsize=11, fontweight='bold', pad=20)\nax1.set_xticks(df['Year'])\nax1.tick_params(axis='x', labelsize=8)\nax1.grid(axis='y', linestyle='--', alpha=0.2)\n\n# Merge legends and adjust font size\nlines, labels = ax1.get_legend_handles_labels()\nlines2, labels2 = ax2.get_legend_handles_labels()\nax2.legend(lines + lines2, labels + labels2, loc='upper left', frameon=False, fontsize=8)\n\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\nStrategic Insight: Net margins expanded to 18.6% alongside revenue growth, confirming strong economies of scale and optimized operational leverage."
+  },
+  {
+    "objectID": "projects/list/project1_financial_analysis.html#cost-structure-breakdown-waterfall-analysis",
+    "href": "projects/list/project1_financial_analysis.html#cost-structure-breakdown-waterfall-analysis",
+    "title": "SME Strategic Financial Diagnostic",
+    "section": "4. Cost Structure Breakdown (Waterfall Analysis)",
+    "text": "4. Cost Structure Breakdown (Waterfall Analysis)\n\n\nView Code (Python)\nlatest = df.iloc[-1]\n\n# Construct Plotly waterfall object with optimized dimensions\nfig = go.Figure(go.Waterfall(\n    name = \"2025 Financials\", orientation = \"v\",\n    measure = [\"relative\", \"relative\", \"relative\", \"total\"],\n    x = [\"Revenue\", \"COGS\", \"Op Exp\", \"Net Profit\"], # Abbreviated labels\n    textposition = \"outside\",\n    text = [f\"+{latest['Revenue']}\", f\"-{latest['COGS']}\", f\"-{latest['Op_Expenses']}\", f\"{latest['Net_Profit']}\"],\n    y = [latest['Revenue'], -latest['COGS'], -latest['Op_Expenses'], latest['Net_Profit']],\n    connector = {\"line\":{\"color\":\"rgb(63, 63, 63)\"}},\n    increasing = {\"marker\":{\"color\": NAVY}},\n    decreasing = {\"marker\":{\"color\": GOLD}},\n    totals = {\"marker\":{\"color\": DARK_GREY}},\n    textfont=dict(size=10) # Reduce text size on bars\n))\n\nfig.update_layout(\n    title = dict(text=\"Profit Erosion Mapping (2025 FY)\", font=dict(size=13)),\n    showlegend = False,\n    plot_bgcolor = 'white',\n    width=550, height=380, # Compressed container size\n    margin=dict(t=60, b=40, l=40, r=40),\n    xaxis=dict(tickfont=dict(size=10)),\n    yaxis=dict(tickfont=dict(size=10))\n)\n\nfig.show()\n\n\n                            \n                                            \n\n\n\nCost Diagnostic: While COGS remains the primary profit drain (49% of turnover), the firm maintains a healthy bottom-line conversion of €49,800."
+  },
+  {
+    "objectID": "projects/list/project1_financial_analysis.html#strategic-business-insights",
+    "href": "projects/list/project1_financial_analysis.html#strategic-business-insights",
+    "title": "SME Strategic Financial Diagnostic",
+    "section": "5. Strategic Business Insights",
+    "text": "5. Strategic Business Insights\n\nExpansion Velocity: Revenue growth sustained a 12% CAGR, indicating robust market penetration in the Irish SME sector.\nOperational Leverage: The widening gap between Gross and Net Margins suggests optimized operating cost structures as the business scales.\nLiquidity Fortress: A Current Ratio of 2.31 (2025) provides a significant buffer for short-term liabilities, far exceeding the industry standard of 1.5."
+  },
+  {
+    "objectID": "projects/list/project1_financial_analysis.html#technical-expertise-methodology",
+    "href": "projects/list/project1_financial_analysis.html#technical-expertise-methodology",
+    "title": "SME Strategic Financial Diagnostic",
+    "section": "6. Technical Expertise & Methodology",
+    "text": "6. Technical Expertise & Methodology\n\nQuantitative Analytics: Advanced financial modeling using Pandas for structured data manipulation.\nDynamic Visualization: Integration of Matplotlib Dual-Axis and Plotly Waterfall charts for multi-dimensional performance tracking.\nAccounting Theory: Applied Vertical and Horizontal Analysis techniques to evaluate income statement integrity."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Songting Chen",
+    "section": "",
+    "text": "I am an Accounting and Finance student at Dublin City University with a strong interest in financial analysis, corporate governance, and sustainable business practices.\nMy academic background has equipped me with solid foundations in financial reporting, data analysis, and strategic decision-making. I have developed practical experience through coursework involving financial modelling, ESG evaluation, and business case analysis.\nI am particularly interested in how financial insights can support long-term value creation and responsible corporate strategy. I enjoy working with data, interpreting financial trends, and presenting insights in a clear and structured way.\nI am currently seeking opportunities to further develop my skills in finance, consulting, or data-driven business roles."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Songting Chen",
+    "section": "",
+    "text": "I am an Accounting and Finance student at Dublin City University with a strong interest in financial analysis, corporate governance, and sustainable business practices.\nMy academic background has equipped me with solid foundations in financial reporting, data analysis, and strategic decision-making. I have developed practical experience through coursework involving financial modelling, ESG evaluation, and business case analysis.\nI am particularly interested in how financial insights can support long-term value creation and responsible corporate strategy. I enjoy working with data, interpreting financial trends, and presenting insights in a clear and structured way.\nI am currently seeking opportunities to further develop my skills in finance, consulting, or data-driven business roles."
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Songting Chen",
+    "section": "Projects",
+    "text": "Projects\n\n\nProject 1: SME Strategic Financial Diagnostic\n\n\nA comprehensive diagnostic of corporate financial health using Python. This project covers profitability ratios, liquidity assessment, and DCF valuation models to translate complex datasets into strategic investment recommendations and trend forecasts.\n\nView Report\n\n\n\n\nProject 2: Nestlé ESG Governance & Climate Accountability\n\n\nAn advanced data visualization project evaluating Nestlé’s structural governance and environmental delivery. By integrating Python-driven radar and bullet charts, it analyzes the alignment between executive remuneration and 2025 plastic reduction targets.\n\nView Report\n\n\n\n\nProject 3: Datalex plc Corporate Governance Diagnostic\n\n\nA strategic case study on governance risks within the aviation tech sector. It identifies critical independence deficits and ownership concentration issues, benchmarking Datalex against QCA standards to assess long-term reputational and operational risks.\n\nView PDF\n\n\n\n\nProject 4: Strategic Macro-Financial Report – Thailand\n\n\nA high-level economic resilience analysis utilizing the AD/AS Framework and IMF Art.This strategic diagnostic models Thailand’s fiscal transition—including a 5-year VAT sensitivity analysis—and evaluates the impact of structural debt on monetary policy effectiveness. It specifically addresses accounting implications under IAS 36 and inventory valuation risks in slow-growth export sectors.\n\nView PDF"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Songting Chen",
+    "section": "Education",
+    "text": "Education\n\nDublin City University\nBSc Accounting & Finance | 2023 – 2026\n\nFinanceTaxationTechnology\n\n\n\n Corporate Finance\n Management Accounting\n Strategic Business Analysis\n Financial Statement Analysis (IAS/IFRS)\n\n\n\n\n Income Tax\n Corporation Tax\n VAT Sensitivity Analysis\n Irish Company Law\n\n\n\n\n Python for Finance (Pandas, NumPy)\n Financial Modelling\n Business Intelligence (Power BI & Tableau)\n AI Fundamentals for Business"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Songting Chen",
+    "section": "Experience",
+    "text": "Experience\n\nSales Assistant | Butlers Chocolate Café, Dublin Jan 2024 – Present\n\nFinancial Integrity: Manage high-volume financial transactions with precision, ensuring accurate daily cash reconciliation and rigorous financial record-keeping.\nClient Relations: Cultivate enduring relationships with frequent clients through professional service and high emotional intelligence, enhancing brand loyalty.\n\nCustomer Server & Shift Audit Support | KFC, Dublin Jul 2022 – Jan 2024\n\nAudit Operations: Conducted daily shift-change audits to verify stock levels and financial totals, ensuring 100% compliance with franchise accounting standards.\nInventory Management: Oversaw supply chain and inventory controls to minimize waste, demonstrating the meticulousness required for precise financial reporting.\n\nCrew Member | McDonald’s, Dublin Feb 2022 – Jul 2022\n\nRegulatory Compliance: Adhered to strict international franchise regulations, maintaining operational standards in a fast-paced, high-compliance environment.\nCommunication: Mastered order accuracy and client-facing communication, developing the foundational soft skills essential for advisory and financial service roles."
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "Songting Chen",
+    "section": "Skills & Certifications",
+    "text": "Skills & Certifications\n\n\nFinancial Analysis: Expert in Financial Modelling, Ratio Analysis, and Valuation methodologies. [Click to view: Introduction to Financial Statements]\nTechnical Proficiency: * Advanced MS Excel: Building complex models and data structures. [Click to view: Build Your First Model]\n\nPython: Data preparation and analysis using Pandas and NumPy. [Click to view: Python Fundamentals]\nData Visualization: Creating professional insights in Tableau and Power BI. [Click to view: Power BI Dashboard | Tableau Visualizations | Data Presentation Skills]\n\nAI & Innovation: Knowledgeable in Predicting Scenarios and AI Fundamentals for business. [Click to view: AI Fundamentals Certificate]\n\n\n\nCompliance & Audit: Experienced in Statutory Audit Support, Regulatory Conformity, and Inventory Control within franchise environments.\nSoft Skills: Professional Communication, Emotional Intelligence, and Strategic Problem Solving developed through high-volume, client-facing roles."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html",
+    "href": "projects/list/project2_nestle_esg_governance.html",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "",
+    "text": "Academic Project 2024–2025 | DCU Accounting & Finance"
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#executive-summary",
+    "href": "projects/list/project2_nestle_esg_governance.html#executive-summary",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "Executive Summary",
+    "text": "Executive Summary\nThis project analyses Nestlé’s corporate governance structure, ESG accountability, climate risk management, and sustainability performance using real-world data from the 2024 Non-Financial Statement, Corporate Governance Report, and public audits.\nUsing Python, we visualise: - Board composition & independence - ESG-linked executive remuneration - Plastic reduction target performance - Governance accountability gaps\nThis analysis applies Agency Theory and Stakeholder Theory to evaluate governance effectiveness in delivering genuine climate action."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#import-python-libraries",
+    "href": "projects/list/project2_nestle_esg_governance.html#import-python-libraries",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "1. Import Python Libraries",
+    "text": "1. Import Python Libraries\n\n\nView Python Source Code\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\n# Optimize global plotting style for high-end aesthetics (differentiated from Project 1)\nplt.style.use('seaborn-v0_8-white')\nplt.rcParams['font.family'] = 'Inter'  # Unified professional font\nplt.rcParams['axes.facecolor'] = '#fafafa'  # Soft neutral background\nplt.rcParams['axes.edgecolor'] = '#e0e0e0'  # Subtle border\nplt.rcParams['axes.labelweight'] = 'bold'  # Bold axis labels for clarity\n\n\n\nSystem Setup: Environment configured with Pandas for data processing and Matplotlib/Plotly for professional financial visualisations."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#esg-governance-kpis-nestlé-2024",
+    "href": "projects/list/project2_nestle_esg_governance.html#esg-governance-kpis-nestlé-2024",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "2. ESG & Governance KPIs (Nestlé 2024)",
+    "text": "2. ESG & Governance KPIs (Nestlé 2024)\n\n\nView Python Source Code\n# Core governance and sustainability metrics (structured for clarity)\nmetrics = [\n    \"Board Independence (%)\",\n    \"ESG in Annual Bonus (%)\",\n    \"LTI Linked to Climate (%)\",\n    \"Plastic Reduction Target Achieved (%)\",\n    \"Plastic Reduction Goal (%)\"\n]\n\nvalues = [92, 15, 20, 21.3, 33]\n\n# Board structure (enhanced data for richer visualization)\nboard_data = {\n    \"Category\": [\"Total Directors\", \"Independent Directors\", \"Female Directors\", \"Male Directors\"],\n    \"Count\": [13, 12, 4, 9],\n    \"Color\": [\"#2E86AB\", \"#A23B72\", \"#F18F01\", \"#3C6E71\"]  # Custom color mapping\n}\n\n# Executive incentive breakdown (detailed for advanced visualization)\nincentive_data = {\n    'Component': ['Base Salary', 'Annual Bonus (ESG Linked)', 'Long-Term Incentive (Climate)'],\n    'Weight (%)': [60, 15, 20],\n    'Description': ['Fixed compensation', 'Tied to ESG performance metrics', 'Linked to climate targets']\n}\n\n\n\nData Foundation: KPIs derived from Nestlé’s 2024 Corporate Governance and Non-Financial Statements, focusing on board structure and incentive alignment."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#visualise-esg-governance-performance",
+    "href": "projects/list/project2_nestle_esg_governance.html#visualise-esg-governance-performance",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "3. Visualise ESG & Governance Performance",
+    "text": "3. Visualise ESG & Governance Performance\n\n\nView Python Source Code\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Suppress font warnings\nplt.rcParams['font.family'] = 'sans-serif'\nplt.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans', 'sans-serif']\n\n# Prepare Radar Chart data\nnum_vars = len(metrics)\nangles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()\nvalues_radar = values + values[:1]  # Close the loop\nangles += angles[:1]\n\n# Reduced figsize (5x5) for a more compact radar chart\nfig, ax = plt.subplots(figsize=(5, 5), subplot_kw=dict(polar=True))\n\n# Draw the radar plot\nax.fill(angles, values_radar, color='#2E86AB', alpha=0.25)\nax.plot(angles, values_radar, color='#2E86AB', linewidth=1.5, marker='o', markersize=4)\n\n# Professional styling\nax.set_theta_offset(np.pi / 2)\nax.set_theta_direction(-1)\nplt.xticks(angles[:-1], metrics, fontsize=8) # Smaller font for cleaner look\n\nax.set_rlabel_position(0)\nplt.yticks([25, 50, 75, 100], [\"25%\", \"50%\", \"75%\", \"100%\"], color=\"grey\", size=7)\nplt.ylim(0, 100)\n\nplt.title('ESG Performance Radar (2024)', fontsize=11, fontweight='bold', pad=20)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\nKey Insight: Nestlé shows exceptional Board Independence (92%), providing a strong foundation for oversight.\nObservation: There is a visible skew towards governance structure over environmental target achievement."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#board-composition-analysis",
+    "href": "projects/list/project2_nestle_esg_governance.html#board-composition-analysis",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "4. Board Composition Analysis",
+    "text": "4. Board Composition Analysis\n\n\nView Python Source Code\nimport pandas as pd\nimport plotly.express as px\n\ndf_board = pd.DataFrame(board_data)\n\n# Reduced size for a more sophisticated web appearance\nfig_tree = px.treemap(df_board, path=['Category'], values='Count',\n                 title='Board Composition Hierarchy',\n                 color='Count',\n                 color_continuous_scale='RdBu',\n                 width=600, height=350)\n\nfig_tree.update_layout(\n    title_font_size=14,\n    title_font_weight='bold',\n    margin=dict(t=40, l=10, r=10, b=10),\n    plot_bgcolor='white',\n    paper_bgcolor='white'\n)\n\nfig_tree.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 2\n\n\n\n\n\nKey Insight: Board independence is nearly absolute (12/13 directors), significantly minimizing agency costs and potential management entrenchment.\nData Point: Gender diversity stands at 31%, highlighting a secondary focus area for future governance evolution."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#plastic-reduction-target-gap-analysis",
+    "href": "projects/list/project2_nestle_esg_governance.html#plastic-reduction-target-gap-analysis",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "5. Plastic Reduction Target Gap Analysis",
+    "text": "5. Plastic Reduction Target Gap Analysis\n\n\nView Python Source Code\nimport matplotlib.pyplot as plt\n\n# Using a much slimmer height (1.6) for a refined dashboard appearance\nplt.figure(figsize=(7, 1.6))\n\n# Suppress font warnings\nplt.rcParams['font.family'] = 'sans-serif'\nplt.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans', 'sans-serif']\n\n# Data points\ncategories = ['Plastic Reduction']\nactual_val = 21.3\ntarget_val = 33\n\n# Plot target bar (background) and actual bar (foreground)\nplt.barh(categories, [target_val], color='#E0E0E0', label='Target (33%)', height=0.4)\nplt.barh(categories, [actual_val], color='#A23B72', label='Actual (21.3%)', height=0.2)\n\n# Add target vertical line\nplt.axvline(x=target_val, color='#C73E1D', linestyle='--', linewidth=1.5)\n\n# Add value annotations\nplt.text(target_val + 0.5, 0, f'Target: {target_val}%', color='#C73E1D', \n         va='center', fontweight='bold', fontsize=9)\nplt.text(actual_val - 0.8, 0, f'{actual_val}%', color='white', \n         va='center', ha='right', fontweight='bold', fontsize=8)\n\n# Styling and minimalist cleanup\nplt.title('Progress Toward 2025 Sustainability Goal', fontsize=11, fontweight='bold', pad=10)\nplt.xlabel('Reduction Percentage (%)', fontsize=9)\nplt.xlim(0, 45)\nplt.yticks([]) # Hide y-axis text to save space and look cleaner\nplt.legend(loc='lower right', fontsize=8, frameon=False)\nplt.grid(axis='x', linestyle=':', alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\nKey Insight: An 11.7% gap currently exists between the 2024 performance (21.3%) and the 2025 plastic reduction goal (33%).\nStrategic Risk: Accelerated investment in circular economy infrastructure is required to mitigate potential greenwashing accusations."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#esg-remuneration-structure",
+    "href": "projects/list/project2_nestle_esg_governance.html#esg-remuneration-structure",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "6. ESG Remuneration Structure",
+    "text": "6. ESG Remuneration Structure\n\n\nView Python Source Code\nimport pandas as pd\nimport plotly.express as px\n\ndf_inc = pd.DataFrame(incentive_data)\n\n# Reduced size for a professional dashboard look\nfig = px.pie(df_inc, values='Weight (%)', names='Component',\n             title='Executive Remuneration Structure',\n             hole=0.45,  # Slightly larger hole for a more modern look\n             color_discrete_map={\n                 'Base Salary': '#2E86AB',\n                 'Annual Bonus (ESG Linked)': '#F18F01',\n                 'Long-Term Incentive (Climate)': '#A23B72'\n             },\n             width=550, height=380)\n\n# Enhance aesthetics and remove Inter font dependency\nfig.update_layout(\n    title_font_size=13,\n    title_font_weight='bold',\n    margin=dict(t=50, l=10, r=10, b=10),\n    plot_bgcolor='#fafafa',\n    paper_bgcolor='white',\n    legend=dict(orientation=\"h\", yanchor=\"bottom\", y=-0.2, xanchor=\"center\", x=0.5)\n)\n\n# Optimize text and hover tooltips\nfig.update_traces(\n    textposition='inside',\n    textinfo='percent',\n    hovertemplate='&lt;b&gt;%{label}&lt;/b&gt;&lt;br&gt;Weight: %{value}%&lt;br&gt;%{customdata}',\n    customdata=df_inc['Description']\n)\n\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 4\n\n\n\n\n\nKey Insight: 40% of executive variable pay is directly linked to ESG and Climate targets, aligning management incentives with long-term sustainability.\nTheoretical Alignment: This structure utilizes Agency Theory to ensure executives prioritize environmental outcomes alongside financial returns."
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#governance-analysis-professional-insights",
+    "href": "projects/list/project2_nestle_esg_governance.html#governance-analysis-professional-insights",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "7. Governance Analysis & Professional Insights",
+    "text": "7. Governance Analysis & Professional Insights\n\nKey Findings:\n\nStrong Governance Structure\n\n92% independent directors (12/13) – exceeds industry average of 75%\nDedicated Sustainability Committee at board level, with quarterly ESG audits\nESG metrics integrated into executive pay (35% of variable remuneration linked to sustainability)\n\nCritical Accountability Gap\n\nOnly 21.3% achieved against a 33% plastic reduction target (2025 goal)\nGovernance design (policy, structure) exceeds operational delivery (execution, outcomes)\nTension between corporate lobbying (e.g., on packaging regulations) and public sustainability commitments\n\nTheoretical Framework\n\nAgency Theory: ESG KPIs align management incentives with shareholder climate risk management\nStakeholder Theory: Sustainability programs address environmental, social, and regulatory stakeholder demands\nHybrid model reveals implementation gaps between policy design and on-the-ground practice\n\n\n\n\nRecommendations:\n\nEstablish a dedicated Climate Oversight Committee (independent directors only) to monitor target progress\nAllocate 30% of Capital Expenditure (CapEx) to decarbonisation and circular economy initiatives\nMandate board-level climate literacy training (aligned with TCFD recommendations)\nImplement quarterly public disclosures on plastic reduction progress to enhance transparency"
+  },
+  {
+    "objectID": "projects/list/project2_nestle_esg_governance.html#technical-skills-core-competencies",
+    "href": "projects/list/project2_nestle_esg_governance.html#technical-skills-core-competencies",
+    "title": "Nestlé S.A. ESG Governance & Climate Accountability Analysis",
+    "section": "8. Technical Skills & Core Competencies",
+    "text": "8. Technical Skills & Core Competencies\n\nData Visualisation: Advanced proficiency in Python (Pandas, Matplotlib, Plotly) for financial and ESG data storytelling.\nGovernance Analysis: Deep understanding of Agency Theory and Board Accountability frameworks\nESG Compliance: Applied knowledge of ISSB, CSRD, and TCFD sustainability reporting standards.\nFinancial Auditing: Quantitative synthesis of Corporate Governance Reports and Non-Financial Statements.\nStrategic Modeling: Performed Gap Analysis for climate targets and executive remuneration alignment."
+  }
+]

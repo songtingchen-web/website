@@ -1,0 +1,327 @@
+---
+title: "Nestlé S.A. ESG Governance & Climate Accountability Analysis"
+description: "Advanced financial analysis of corporate governance and sustainability targets using Python."
+author: "SONTING CHEN"
+date: "2025-04-20"
+categories: ["ESG", "Corporate Governance", "Python Analysis"]
+jupyter: python3
+
+format:
+  html:
+    # 1. 布局核心设置
+    page-layout: article       
+    max-width: 1050px           
+    
+    # 2. 交互式目录 (TOC)
+    toc: true                  
+    toc-depth: 3               
+    toc-location: left         
+    toc-title: "Report Menu"   
+    
+    # 3. 代码块控制
+    code-fold: true            
+    code-summary: "View Python Source Code" 
+    code-tools: true           
+    
+    
+    theme: 
+      - cosmo                   
+    highlight-style: github     
+    fig-cap-location: bottom   
+    smooth-scroll: true         
+    
+    css: |
+      
+      body {
+        background-color: #fcfcfc;
+      }
+      .quarto-title {
+        border-bottom: 2px solid #2E86AB;
+        padding-bottom: 10px;
+      }
+      #title-block-header {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+---
+
+**Academic Project 2024–2025 | DCU Accounting & Finance**
+
+## Executive Summary
+This project analyses Nestlé’s corporate governance structure, ESG accountability, climate risk management, and sustainability performance using real-world data from the 2024 Non-Financial Statement, Corporate Governance Report, and public audits.
+
+Using Python, we visualise:
+- Board composition & independence
+- ESG-linked executive remuneration
+- Plastic reduction target performance
+- Governance accountability gaps
+
+This analysis applies **Agency Theory** and **Stakeholder Theory** to evaluate governance effectiveness in delivering genuine climate action.
+
+---
+
+## 1. Import Python Libraries
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.express as px
+
+# Optimize global plotting style for high-end aesthetics (differentiated from Project 1)
+plt.style.use('seaborn-v0_8-white')
+plt.rcParams['font.family'] = 'Inter'  # Unified professional font
+plt.rcParams['axes.facecolor'] = '#fafafa'  # Soft neutral background
+plt.rcParams['axes.edgecolor'] = '#e0e0e0'  # Subtle border
+plt.rcParams['axes.labelweight'] = 'bold'  # Bold axis labels for clarity
+```
+
+* **System Setup**: Environment configured with Pandas for data processing and Matplotlib/Plotly for professional financial visualisations.
+
+---
+
+## 2. ESG & Governance KPIs (Nestlé 2024)
+```{python}
+# Core governance and sustainability metrics (structured for clarity)
+metrics = [
+    "Board Independence (%)",
+    "ESG in Annual Bonus (%)",
+    "LTI Linked to Climate (%)",
+    "Plastic Reduction Target Achieved (%)",
+    "Plastic Reduction Goal (%)"
+]
+
+values = [92, 15, 20, 21.3, 33]
+
+# Board structure (enhanced data for richer visualization)
+board_data = {
+    "Category": ["Total Directors", "Independent Directors", "Female Directors", "Male Directors"],
+    "Count": [13, 12, 4, 9],
+    "Color": ["#2E86AB", "#A23B72", "#F18F01", "#3C6E71"]  # Custom color mapping
+}
+
+# Executive incentive breakdown (detailed for advanced visualization)
+incentive_data = {
+    'Component': ['Base Salary', 'Annual Bonus (ESG Linked)', 'Long-Term Incentive (Climate)'],
+    'Weight (%)': [60, 15, 20],
+    'Description': ['Fixed compensation', 'Tied to ESG performance metrics', 'Linked to climate targets']
+}
+```
+
+* **Data Foundation**: KPIs derived from Nestlé’s 2024 Corporate Governance and Non-Financial Statements, focusing on board structure and incentive alignment.
+
+---
+
+## 3. Visualise ESG & Governance Performance
+```{python}
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: 50%
+#| label: fig-radar
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Suppress font warnings
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans', 'sans-serif']
+
+# Prepare Radar Chart data
+num_vars = len(metrics)
+angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
+values_radar = values + values[:1]  # Close the loop
+angles += angles[:1]
+
+# Reduced figsize (5x5) for a more compact radar chart
+fig, ax = plt.subplots(figsize=(5, 5), subplot_kw=dict(polar=True))
+
+# Draw the radar plot
+ax.fill(angles, values_radar, color='#2E86AB', alpha=0.25)
+ax.plot(angles, values_radar, color='#2E86AB', linewidth=1.5, marker='o', markersize=4)
+
+# Professional styling
+ax.set_theta_offset(np.pi / 2)
+ax.set_theta_direction(-1)
+plt.xticks(angles[:-1], metrics, fontsize=8) # Smaller font for cleaner look
+
+ax.set_rlabel_position(0)
+plt.yticks([25, 50, 75, 100], ["25%", "50%", "75%", "100%"], color="grey", size=7)
+plt.ylim(0, 100)
+
+plt.title('ESG Performance Radar (2024)', fontsize=11, fontweight='bold', pad=20)
+plt.tight_layout()
+plt.show()
+```
+
+* **Key Insight**: Nestlé shows exceptional Board Independence (92%), providing a strong foundation for oversight.
+
+* **Observation**: There is a visible skew towards governance structure over environmental target achievement.
+
+---
+
+## 4. Board Composition Analysis
+
+```{python}
+#| fig-width: 6
+#| fig-height: 3.5
+#| out-width: 60%
+#| label: fig-treemap
+
+import pandas as pd
+import plotly.express as px
+
+df_board = pd.DataFrame(board_data)
+
+# Reduced size for a more sophisticated web appearance
+fig_tree = px.treemap(df_board, path=['Category'], values='Count',
+                 title='Board Composition Hierarchy',
+                 color='Count',
+                 color_continuous_scale='RdBu',
+                 width=600, height=350)
+
+fig_tree.update_layout(
+    title_font_size=14,
+    title_font_weight='bold',
+    margin=dict(t=40, l=10, r=10, b=10),
+    plot_bgcolor='white',
+    paper_bgcolor='white'
+)
+
+fig_tree.show()
+```
+
+* **Key Insight**: Board independence is nearly absolute (12/13 directors), significantly minimizing agency costs and potential management entrenchment.
+
+* **Data Point**: Gender diversity stands at 31%, highlighting a secondary focus area for future governance evolution.
+
+---
+
+## 5. Plastic Reduction Target Gap Analysis
+```{python}
+#| fig-width: 7
+#| fig-height: 1.6
+#| out-width: 65%
+#| label: fig-gap-analysis
+
+import matplotlib.pyplot as plt
+
+# Using a much slimmer height (1.6) for a refined dashboard appearance
+plt.figure(figsize=(7, 1.6))
+
+# Suppress font warnings
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans', 'sans-serif']
+
+# Data points
+categories = ['Plastic Reduction']
+actual_val = 21.3
+target_val = 33
+
+# Plot target bar (background) and actual bar (foreground)
+plt.barh(categories, [target_val], color='#E0E0E0', label='Target (33%)', height=0.4)
+plt.barh(categories, [actual_val], color='#A23B72', label='Actual (21.3%)', height=0.2)
+
+# Add target vertical line
+plt.axvline(x=target_val, color='#C73E1D', linestyle='--', linewidth=1.5)
+
+# Add value annotations
+plt.text(target_val + 0.5, 0, f'Target: {target_val}%', color='#C73E1D', 
+         va='center', fontweight='bold', fontsize=9)
+plt.text(actual_val - 0.8, 0, f'{actual_val}%', color='white', 
+         va='center', ha='right', fontweight='bold', fontsize=8)
+
+# Styling and minimalist cleanup
+plt.title('Progress Toward 2025 Sustainability Goal', fontsize=11, fontweight='bold', pad=10)
+plt.xlabel('Reduction Percentage (%)', fontsize=9)
+plt.xlim(0, 45)
+plt.yticks([]) # Hide y-axis text to save space and look cleaner
+plt.legend(loc='lower right', fontsize=8, frameon=False)
+plt.grid(axis='x', linestyle=':', alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+* **Key Insight**: An 11.7% gap currently exists between the 2024 performance (21.3%) and the 2025 plastic reduction goal (33%).
+
+* **Strategic Risk**: Accelerated investment in circular economy infrastructure is required to mitigate potential greenwashing accusations.
+
+---
+
+## 6. ESG Remuneration Structure
+```{python}
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 55%
+#| label: fig-remuneration
+
+import pandas as pd
+import plotly.express as px
+
+df_inc = pd.DataFrame(incentive_data)
+
+# Reduced size for a professional dashboard look
+fig = px.pie(df_inc, values='Weight (%)', names='Component',
+             title='Executive Remuneration Structure',
+             hole=0.45,  # Slightly larger hole for a more modern look
+             color_discrete_map={
+                 'Base Salary': '#2E86AB',
+                 'Annual Bonus (ESG Linked)': '#F18F01',
+                 'Long-Term Incentive (Climate)': '#A23B72'
+             },
+             width=550, height=380)
+
+# Enhance aesthetics and remove Inter font dependency
+fig.update_layout(
+    title_font_size=13,
+    title_font_weight='bold',
+    margin=dict(t=50, l=10, r=10, b=10),
+    plot_bgcolor='#fafafa',
+    paper_bgcolor='white',
+    legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5)
+)
+
+# Optimize text and hover tooltips
+fig.update_traces(
+    textposition='inside',
+    textinfo='percent',
+    hovertemplate='<b>%{label}</b><br>Weight: %{value}%<br>%{customdata}',
+    customdata=df_inc['Description']
+)
+
+fig.show()
+```
+* **Key Insight**: 40% of executive variable pay is directly linked to ESG and Climate targets, aligning management incentives with long-term sustainability.
+
+* **Theoretical Alignment**: This structure utilizes **Agency Theory** to ensure executives prioritize environmental outcomes alongside financial returns.
+
+---
+
+## 7. Governance Analysis & Professional Insights
+### Key Findings:
+1. **Strong Governance Structure**
+   - 92% independent directors (12/13) – exceeds industry average of 75%
+   - Dedicated Sustainability Committee at board level, with quarterly ESG audits
+   - ESG metrics integrated into executive pay (35% of variable remuneration linked to sustainability)
+
+2. **Critical Accountability Gap**
+   - Only **21.3% achieved** against a 33% plastic reduction target (2025 goal)
+   - Governance design (policy, structure) exceeds operational delivery (execution, outcomes)
+   - Tension between corporate lobbying (e.g., on packaging regulations) and public sustainability commitments
+
+3. **Theoretical Framework**
+   - **Agency Theory**: ESG KPIs align management incentives with shareholder climate risk management
+   - **Stakeholder Theory**: Sustainability programs address environmental, social, and regulatory stakeholder demands
+   - Hybrid model reveals implementation gaps between policy design and on-the-ground practice
+
+### Recommendations:
+- Establish a dedicated **Climate Oversight Committee** (independent directors only) to monitor target progress
+- Allocate 30% of Capital Expenditure (CapEx) to decarbonisation and circular economy initiatives
+- Mandate board-level climate literacy training (aligned with TCFD recommendations)
+- Implement quarterly public disclosures on plastic reduction progress to enhance transparency
+
+---
+
+## 8. Technical Skills & Core Competencies
+- Data Visualisation: Advanced proficiency in Python (Pandas, Matplotlib, Plotly) for financial and ESG data storytelling.
+- Governance Analysis: Deep understanding of Agency Theory and Board Accountability frameworks
+- ESG Compliance: Applied knowledge of ISSB, CSRD, and TCFD sustainability reporting standards.
+- Financial Auditing: Quantitative synthesis of Corporate Governance Reports and Non-Financial Statements.
+- Strategic Modeling: Performed Gap Analysis for climate targets and executive remuneration alignment.

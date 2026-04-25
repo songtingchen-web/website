@@ -1,0 +1,232 @@
+/*-- scss:defaults --*/
+// Base variables
+$body-bg: #f7f8fa;
+$body-color: #1a1a1a;
+$link-color: #003366;
+$font-family-sans-serif: 'Inter', sans-serif;
+
+/*-- scss:rules --*/
+// Custom styles
+
+// Navbar
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+
+// Top section layout
+.top-layout {
+  display: flex;
+  max-width: 1100px;
+  margin: 60px auto;
+  gap: 60px;
+}
+
+.sidebar {
+  width: 260px;
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.name {
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.major {
+  color: #666;
+  font-size: 14px;
+}
+
+/* 社交图标样式 */
+.socials-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.socials-icons a {
+  color: #555 !important;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.socials-icons i.bi::before {
+  font-family: "bootstrap-icons" !important;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal !important;
+  line-height: 1;
+}
+
+.socials-icons a:hover {
+  color: #003366 !important; 
+  transform: scale(1.2);
+}
+
+// CV download button
+.cv-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background-color: #111;
+  color: white !important;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+// CV button hover
+.cv-btn:hover {
+  background-color: #333 !important;       
+  transform: translateY(-3px);            
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+  color: white !important;
+  cursor: pointer;
+}
+
+// Certificate tag link style
+.section-full a[href$=".jpg"] {
+  font-size: 0.82em;         
+  color: white !important;    
+  text-decoration: none;
+  background-color: #002b55;  
+  padding: 3px 8px;           
+  border-radius: 4px;
+  margin-left: 6px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;           
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+}
+
+.section-full a[href$=".jpg"]:hover {
+  background-color: #004080;  
+  color: white !important;
+  transform: translateY(-2px); 
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+// Intro text layout
+.intro {
+  flex: 1;
+  column-count: 2;
+  column-gap: 40px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ============================================= */
+/* Main layout: align content to right */
+/* ============================================= */
+
+// Limit width for title & content
+h2, 
+.project-entry, 
+.section-full {
+  max-width: 850px;           
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px;         
+  padding-right: 20px;
+}
+
+// Section heading style 
+h2 {
+  margin-top: 60px;           
+  margin-bottom: 30px;        
+  font-weight: 700;
+  color: #111;
+  text-align: left;           
+  margin-left: 80px !important;  
+}
+
+// Project item style
+.project-entry {
+  margin-bottom: 60px;
+  text-align: left;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #111;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 20px;
+  }
+}
+
+// Project button
+.project-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #111;
+  color: white !important;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+// Divider style
+hr {
+  max-width: 850px;
+  margin: 40px auto;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+// Mobile responsive
+@media (max-width: 900px) {
+  .top-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro {
+    column-count: 1;
+  }
+  
+  h2, .project-entry, .section-full {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+/* ============================================= */
+/* change the loaction of the photo */
+/* ============================================= */
+
+.about-entity {
+  /* 100 */
+  margin-top: 100px !important; 
+  
+  margin-left: -80px !important;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

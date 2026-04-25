@@ -1,0 +1,235 @@
+---
+title: "SME Strategic Financial Diagnostic"
+description: "A professional audit-grade financial analysis tool utilizing Python to evaluate profitability trajectories and liquidity health for Irish SMEs."
+author: "SONGTING CHEN"
+date: "2025-04-15"
+categories: ["Financial Audit", "SME Strategy", "Python"]
+jupyter: python3
+
+format:
+  html:
+   
+    page-layout: article
+    max-width: 900px           
+    toc: true
+    toc-location: right        
+    toc-title: "Audit Sections"
+    
+    code-fold: true
+    code-summary: "View Code (Python)"
+    
+    
+    theme: flatly               
+    highlight-style: arrow      
+    
+    
+    css: |
+      /* Page background */
+      body {
+        background-color: #ffffff;
+        color: #2c3e50;
+        font-family: 'Georgia', serif; 
+      }
+      
+      /* Title block style */
+      .quarto-title {
+        border-left: 10px solid #003366; 
+        padding-left: 20px;
+        margin-top: 4rem;
+        background-color: #f8f8fa;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      
+      /* Chart centering */
+      .cell-output-display {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #eee; 
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.02);
+      }
+      
+      /* Table output style */
+      .cell-output-stdout pre {
+        margin: 30px auto;
+        display: table;
+        border-top: 3px solid #C5A059; 
+        border-bottom: 3px solid #C5A059;
+        padding: 20px 40px;
+        background-color: #fff;
+        font-family: 'Courier New', monospace;
+      }
+      
+      /* Section header */
+      h2 {
+        color: #003366;
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+        font-size: 1.4rem;
+        border-bottom: 1px solid #C5A059; 
+        padding-bottom: 5px;
+      }
+---
+
+## 1. Executive Environment Setup
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+
+NAVY = "#003366"
+GOLD = "#C5A059"
+GREY = "#F2F2F2"
+DARK_GREY = "#404040"
+
+
+plt.style.use('seaborn-v0_8-white')
+plt.rcParams.update({
+    'font.family': 'sans-serif',
+    'font.sans-serif': ['Arial'],
+    'axes.edgecolor': DARK_GREY,
+    'axes.labelcolor': DARK_GREY,
+    'xtick.color': DARK_GREY,
+    'ytick.color': DARK_GREY
+})
+```
+---
+
+
+## 2. Core Financial Datasets (2022–2025)
+```{python}
+#data
+import pandas as pd
+
+# --- 1. Dataset Initialization ---
+# Defining historical and projected financial data for analysis
+financial_data = {
+    'Year': [2022, 2023, 2024, 2025],
+    'Revenue': [185000, 210000, 235000, 268000],
+    'COGS': [95000, 108000, 119000, 132000],
+    'Op_Expenses': [61500, 67800, 74500, 86200],
+    'Net_Profit': [28500, 34200, 41500, 49800],
+    'Current_Assets': [46000, 52000, 59000, 67000],
+    'Current_Liabilities': [22000, 24000, 26000, 29000]
+}
+
+df = pd.DataFrame(financial_data)
+
+# --- 2. Financial Calculation Logic ---
+# Deriving key profitability and liquidity metrics 
+df['Gross_Profit'] = df['Revenue'] - df['COGS']
+df['GPM'] = (df['Gross_Profit'] / df['Revenue']) * 100
+df['NPM'] = (df['Net_Profit'] / df['Revenue']) * 100
+df['Current_Ratio'] = df['Current_Assets'] / df['Current_Liabilities']
+
+# --- 3. Strategic KPI Summary Report ---
+# Formatting the output table to align with professional accounting standards
+styled_df = df[['Year', 'GPM', 'NPM', 'Current_Ratio']].copy()
+styled_df.columns = ['Fiscal Year', 'Gross Margin (%)', 'Net Margin (%)', 'Liquidity (Ratio)']
+
+# Print formatted summary for the ePortfolio display
+print("\n" + "=" * 70)
+print(f"{'STRATEGIC KPI SUMMARY':^70}")
+print("=" * 70)
+print(styled_df.to_string(index=False, float_format=lambda x: f'{x:.2f}'))
+print("=" * 70)
+```
+
+---
+
+## 3. Profitability Engine: Dual-Axis Trend Analysis
+```{python}
+#| fig-width: 6.5
+#| fig-height: 4
+#| out-width: 70%
+#| fig-align: center
+
+# Reduce figsize to (7, 4.5) for a more compact output
+fig, ax1 = plt.subplots(figsize=(7, 4.5))
+
+# Plot Revenue bars (using defined NAVY color)
+bars = ax1.bar(df['Year'], df['Revenue'], color=NAVY, alpha=0.85, label='Total Revenue', width=0.4)
+ax1.set_ylabel('Revenue (EUR)', fontweight='bold', color=NAVY, fontsize=9)
+ax1.tick_params(axis='y', labelcolor=NAVY, labelsize=8)
+
+# Create secondary y-axis for profit margin
+ax2 = ax1.twinx()
+ax2.plot(df['Year'], df['NPM'], color=GOLD, marker='D', linewidth=2.5, markersize=6, label='Net Profit Margin (%)')
+ax2.set_ylabel('Net Margin (%)', fontweight='bold', color=GOLD, fontsize=9)
+ax2.tick_params(axis='y', labelcolor=GOLD, labelsize=8)
+
+# Aesthetic optimizations
+plt.title('Performance Scaling: Revenue vs. Profitability', fontsize=11, fontweight='bold', pad=20)
+ax1.set_xticks(df['Year'])
+ax1.tick_params(axis='x', labelsize=8)
+ax1.grid(axis='y', linestyle='--', alpha=0.2)
+
+# Merge legends and adjust font size
+lines, labels = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax2.legend(lines + lines2, labels + labels2, loc='upper left', frameon=False, fontsize=8)
+
+plt.tight_layout()
+plt.show()
+```
+
+- Strategic Insight: Net margins expanded to 18.6% alongside revenue growth, confirming strong economies of scale and optimized operational leverage.
+
+---
+
+## 4. Cost Structure Breakdown (Waterfall Analysis)
+```{python}
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 65%
+#| fig-align: center
+
+latest = df.iloc[-1]
+
+# Construct Plotly waterfall object with optimized dimensions
+fig = go.Figure(go.Waterfall(
+    name = "2025 Financials", orientation = "v",
+    measure = ["relative", "relative", "relative", "total"],
+    x = ["Revenue", "COGS", "Op Exp", "Net Profit"], # Abbreviated labels
+    textposition = "outside",
+    text = [f"+{latest['Revenue']}", f"-{latest['COGS']}", f"-{latest['Op_Expenses']}", f"{latest['Net_Profit']}"],
+    y = [latest['Revenue'], -latest['COGS'], -latest['Op_Expenses'], latest['Net_Profit']],
+    connector = {"line":{"color":"rgb(63, 63, 63)"}},
+    increasing = {"marker":{"color": NAVY}},
+    decreasing = {"marker":{"color": GOLD}},
+    totals = {"marker":{"color": DARK_GREY}},
+    textfont=dict(size=10) # Reduce text size on bars
+))
+
+fig.update_layout(
+    title = dict(text="Profit Erosion Mapping (2025 FY)", font=dict(size=13)),
+    showlegend = False,
+    plot_bgcolor = 'white',
+    width=550, height=380, # Compressed container size
+    margin=dict(t=60, b=40, l=40, r=40),
+    xaxis=dict(tickfont=dict(size=10)),
+    yaxis=dict(tickfont=dict(size=10))
+)
+
+fig.show()
+```
+- Cost Diagnostic: While COGS remains the primary profit drain (49% of turnover), the firm maintains a healthy bottom-line conversion of €49,800.
+
+---
+
+## 5. Strategic Business Insights
+- Expansion Velocity: Revenue growth sustained a 12% CAGR, indicating robust market penetration in the Irish SME sector.
+- Operational Leverage: The widening gap between Gross and Net Margins suggests optimized operating cost structures as the business scales.
+- Liquidity Fortress: A Current Ratio of 2.31 (2025) provides a significant buffer for short-term liabilities, far exceeding the industry standard of 1.5.
+
+---
+
+## 6. Technical Expertise & Methodology
+- Quantitative Analytics: Advanced financial modeling using Pandas for structured data manipulation.
+- Dynamic Visualization: Integration of Matplotlib Dual-Axis and Plotly Waterfall charts for multi-dimensional performance tracking.
+- Accounting Theory: Applied Vertical and Horizontal Analysis techniques to evaluate income statement integrity.

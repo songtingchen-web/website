@@ -1,0 +1,38 @@
+{
+  "index.qmd": {
+    "index.html": "e46b23a4"
+  },
+  "projects/index.qmd": {
+    "index.html": "0e42c0ad"
+  },
+  "projects/project1-budget/budget-analysis.qmd": {
+    "budget-analysis.html": "6a7c152c"
+  },
+  "projects/project2-nestle/nestle-governance.qmd": {
+    "nestle-governance.html": "6b325ac1"
+  },
+  "projects/list/project1_financial_analysis.qmd": {
+    "project1_financial_analysis.html": "f475b0e1"
+  },
+  "projects/list/project2_nestle_esg_governance.qmd": {
+    "project2_nestle_esg_governance.html": "71c65a4b"
+  },
+  "docs/projects/index.qmd": {
+    "index.html": "1d3dd7c3"
+  },
+  "docs/projects/list/project1_financial_analysis.qmd": {
+    "project1_financial_analysis.html": "a4750f31"
+  },
+  "docs/projects/list/project2_nestle_esg_governance.qmd": {
+    "project2_nestle_esg_governance.html": "08fa1a23"
+  },
+  "docs/projects/project1-budget/budget-analysis.qmd": {
+    "budget-analysis.html": "403e14a8"
+  },
+  "docs/projects/project2-nestle/nestle-governance.qmd": {
+    "nestle-governance.html": "c980d2fa"
+  },
+  "reflection.qmd": {
+    "reflection.html": "cb17fcb9"
+  }
+}

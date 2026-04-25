@@ -1,0 +1,145 @@
+---
+title: "Songting Chen"
+image: songting_chen.jpg
+about:
+  template: trestles   
+  image-shape: rounded
+  image-width: 15em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/songtingchen-web
+      target: _blank
+    - icon: envelope
+      text: Email
+      href: mailto:chensongting2023@icloud.com
+---
+
+## About Me
+
+I am an Accounting and Finance student at Dublin City University with a strong interest in financial analysis, corporate governance, and sustainable business practices.
+
+My academic background has equipped me with solid foundations in financial reporting, data analysis, and strategic decision-making. I have developed practical experience through coursework involving financial modelling, ESG evaluation, and business case analysis.
+
+I am particularly interested in how financial insights can support long-term value creation and responsible corporate strategy. I enjoy working with data, interpreting financial trends, and presenting insights in a clear and structured way.
+
+I am currently seeking opportunities to further develop my skills in finance, consulting, or data-driven business roles.
+
+</div>
+---
+
+## Projects
+
+<div class="project-entry">
+  <h3>Project 1: SME Strategic Financial Diagnostic</h3>
+  <p>A comprehensive diagnostic of corporate financial health using Python. This project covers profitability ratios, liquidity assessment, and DCF valuation models to translate complex datasets into strategic investment recommendations and trend forecasts.</p>
+  <a href="projects/list/project1_financial_analysis.html" class="project-btn">View Report</a>
+</div>
+
+<hr>
+
+<div class="project-entry">
+  <h3>Project 2: Nestlé ESG Governance & Climate Accountability</h3>
+  <p>An advanced data visualization project evaluating Nestlé’s structural governance and environmental delivery. By integrating Python-driven radar and bullet charts, it analyzes the alignment between executive remuneration and 2025 plastic reduction targets.</p>
+  <a href="projects/list/project2_nestle_esg_governance.html" class="project-btn">View Report</a>
+</div>
+
+<hr>
+
+<div class="project-entry">
+  <h3>Project 3: Datalex plc Corporate Governance Diagnostic</h3>
+  <p>A strategic case study on governance risks within the aviation tech sector. It identifies critical independence deficits and ownership concentration issues, benchmarking Datalex against QCA standards to assess long-term reputational and operational risks.</p>
+  <a href="projects/list/Datalex.pdf" class="project-btn" target="_blank">View PDF</a>
+</div>
+
+<hr>
+
+<div class="project-entry">
+  <h3>Project 4: Strategic Macro-Financial Report – Thailand</h3>
+  <p>A high-level economic resilience analysis utilizing the AD/AS Framework and IMF Art.This strategic diagnostic models Thailand's fiscal transition—including a 5-year VAT sensitivity analysis—and evaluates the impact of structural debt on monetary policy effectiveness. It specifically addresses accounting implications under IAS 36 and inventory valuation risks in slow-growth export sectors.</p>
+  <a href="projects/list/Thailand_Structural.pdf" class="project-btn" target="_blank">View PDF</a>
+</div>
+---
+
+## Education {#education}
+
+<div class="section-full">
+
+### Dublin City University
+**BSc Accounting & Finance** | *2023 – 2026*
+
+::: {.panel-tabset}
+
+## **Finance**
+* [{{< fa landmark >}}]{.secondary} **Corporate Finance**
+* [{{< fa calculator >}}]{.secondary} **Management Accounting**
+* [{{< fa chart-line >}}]{.secondary} **Strategic Business Analysis**
+* [{{< fa file-invoice-dollar >}}]{.secondary} Financial Statement Analysis (IAS/IFRS)
+
+## **Taxation**
+* [{{< fa scale-balanced >}}]{.secondary} **Income Tax**
+* [{{< fa building-columns >}}]{.secondary} **Corporation Tax**
+* [{{< fa percentage >}}]{.secondary} **VAT Sensitivity Analysis**
+* [{{< fa gavel >}}]{.secondary} Irish Company Law
+
+## **Technology**
+* [{{< fa code >}}]{.secondary} **Python for Finance** (Pandas, NumPy)
+* [{{< fa laptop-code >}}]{.secondary} **Financial Modelling**
+* [{{< fa chart-pie >}}]{.secondary} **Business Intelligence** (Power BI & Tableau)
+* [{{< fa microchip >}}]{.secondary} AI Fundamentals for Business
+
+:::
+
+</div>
+
+---
+
+
+## Experience {#experience}
+
+<div class="section-full">
+
+
+**Sales Assistant | Butlers Chocolate Café, Dublin** *Jan 2024 – Present*
+
+* **Financial Integrity:** Manage high-volume financial transactions with precision, ensuring accurate daily cash reconciliation and rigorous financial record-keeping.
+* **Client Relations:** Cultivate enduring relationships with frequent clients through professional service and high emotional intelligence, enhancing brand loyalty.
+
+
+**Customer Server & Shift Audit Support | KFC, Dublin** *Jul 2022 – Jan 2024*
+
+* **Audit Operations:** Conducted daily shift-change audits to verify stock levels and financial totals, ensuring 100% compliance with franchise accounting standards.
+* **Inventory Management:** Oversaw supply chain and inventory controls to minimize waste, demonstrating the meticulousness required for precise financial reporting.
+
+
+**Crew Member | McDonald’s, Dublin** *Feb 2022 – Jul 2022*
+
+* **Regulatory Compliance:** Adhered to strict international franchise regulations, maintaining operational standards in a fast-paced, high-compliance environment.
+* **Communication:** Mastered order accuracy and client-facing communication, developing the foundational soft skills essential for advisory and financial service roles.
+
+
+</div>
+
+---
+
+## Skills & Certifications {#skills}
+
+<div class="section-full">
+
+* **Financial Analysis:** Expert in **Financial Modelling**, **Ratio Analysis**, and **Valuation** methodologies. [Click to view: [Introduction to Financial Statements](01.jpg)]
+
+* **Technical Proficiency:** * **Advanced MS Excel:** Building complex models and data structures. [Click to view: [Build Your First Model](02.jpg)]
+    * **Python:** Data preparation and analysis using **Pandas** and **NumPy**. [Click to view: [Python Fundamentals](03.jpg)]
+    * **Data Visualization:** Creating professional insights in **Tableau** and **Power BI**. [Click to view: [Power BI Dashboard](04.jpg) | [Tableau Visualizations](05.jpg) | [Data Presentation Skills](07.jpg)]
+
+* **AI & Innovation:** Knowledgeable in **Predicting Scenarios** and **AI Fundamentals** for business. [Click to view: [AI Fundamentals Certificate](06.jpg)]
+
+::: {.section-content style="margin-top: 1em;"}
+
+* [x] **Compliance & Audit:** Experienced in **Statutory Audit Support**, **Regulatory Conformity**, and **Inventory Control** within franchise environments.
+
+* [x] **Soft Skills:** **Professional Communication**, **Emotional Intelligence**, and **Strategic Problem Solving** developed through high-volume, client-facing roles.
+
+
+
+</div>

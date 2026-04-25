@@ -1,0 +1,34 @@
+---
+title: "Learning Reflection"
+subtitle: "Critical Self-Assessment & Future Goals"
+author: "SONGTING CHEN"
+date: "2026-04-25"
+format:
+  html:
+    toc: true
+    toc-location: left
+---
+
+::: {.callout-note appearance="minimal"}
+## **1. Technical Mastery: Beyond the Spreadsheet**
+As an Accounting and Finance student, my traditional focus was on static reporting. This module introduced me to a reproducible workflow:
+* Git & Version Control: Moving from bulk uploads to incremental commits showed me how to professionally track progress.
+* Quarto Ecosystem: Integrating Python code directly into digital reports ensures data integrity—a critical requirement for modern auditing.
+:::
+
+::: {.callout-tip appearance="minimal"}
+## **2. Analytical Innovation with Python**
+Using active Python code chunks instead of screenshots was a major step forward. 
+* Interactive Viz: Implementing Plotly waterfall charts allowed for a more dynamic exploration of profit erosion compared to traditional Excel charts.
+* Code Transparency: Utilizing code-fold allows me to maintain a professional executive summary while keeping the technical methodology accessible.
+:::
+
+::: {.callout-important appearance="minimal"}
+## **3. Overcoming Deployment Challenges**
+The transition to web development was not without hurdles. Configuring the _quarto.yml navigation and managing asset paths required meticulous attention to detail. Successfully deploying this ePortfolio to GitHub Pages demonstrated my ability to troubleshoot technical environments.
+:::
+
+## **Future Strategic Vision**
+These skills are directly applicable to the modern financial sector. I plan to leverage automated reporting to enhance audit efficiency and use data analytics for strategic SME consulting. This ePortfolio serves as a foundation for my journey as a tech-enabled financial professional.
+
+---

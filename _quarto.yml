@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Songting Chen Portfolio"
+  favicon: favicon.ico
+  navbar:
+    logo: images/logo.png
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Projects
+        href: index.qmd#projects
+      - text: Education
+        href: index.qmd#education
+      - text: Experience
+        href: index.qmd#experience
+      - text: Skills
+        href: index.qmd#skills
+      - text: Reflection
+        href: reflection.qmd  
+    right:
+      - icon: github
+        href: https://github.com/songtingchen-web
+        target: _blank
+      - text: CV
+        href: CV/Songting_Chen_Professional_Resume.pdf
+        target: _blank
+
+
+
+  page-footer:
+    left: "© 2025 Songting Chen"
+    right: "Built with [Quarto](https://quarto.org/)"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.scss
+    toc: false
+    code-fold: true

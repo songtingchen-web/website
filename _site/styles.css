@@ -1,0 +1,161 @@
+/*-- scss: defaults --*/
+$body-bg: #f7f8fa;
+$body-color: #1a1a1a;
+$link-color: #003366;
+$font-family-sans-serif: 'Inter', sans-serif;
+
+/*-- scss: rules --*/
+
+/* NAVBAR */
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+
+/* TOP LAYOUT */
+.top-layout {
+  display: flex;
+  max-width: 1100px;
+  margin: 60px auto;
+  gap: 60px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.name {
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.major {
+  color: #666;
+  font-size: 14px;
+}
+
+/*-- scss: rules --*/
+
+/* SOCIAL ICONS */
+.socials-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.socials-icons a {
+  color: #555 !important;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  display: inline-flex; /* 确保图标容器有宽高 */
+  align-items: center;
+}
+
+/* 关键修复：强制图标使用 Bootstrap 字体 */
+.socials-icons i.bi::before {
+  font-family: "bootstrap-icons" !important;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal !important;
+  line-height: 1;
+}
+
+.socials-icons a:hover {
+  color: #003366 !important; 
+  transform: scale(1.2);
+}
+
+.cv-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background-color: #111;
+  color: white !important;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.cv-btn:hover {
+  background-color: #333;
+}
+
+/* INTRO CONTENT */
+.intro {
+  flex: 1;
+  column-count: 2;
+  column-gap: 40px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* FULL WIDTH SECTIONS */
+.section-full {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* PROJECT CARDS */
+.project-entry {
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.project-entry h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-entry p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #111;
+  color: white !important;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .top-layout {
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 20px;
+  }
+
+  .intro {
+    column-count: 1;
+  }
+}
