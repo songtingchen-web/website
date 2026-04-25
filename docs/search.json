@@ -4,14 +4,7 @@
     "href": "reflection.html",
     "title": "Learning Reflection",
     "section": "",
-    "text": "Note1. Technical Mastery: Beyond the Spreadsheet\n\n\n\nAs an Accounting and Finance student, my traditional focus was on static reporting. This module introduced me to a reproducible workflow: * Git & Version Control: Moving from bulk uploads to incremental commits showed me how to professionally track progress. * Quarto Ecosystem: Integrating Python code directly into digital reports ensures data integrity—a critical requirement for modern auditing."
-  },
-  {
-    "objectID": "reflection.html#future-strategic-vision",
-    "href": "reflection.html#future-strategic-vision",
-    "title": "Learning Reflection",
-    "section": "Future Strategic Vision",
-    "text": "Future Strategic Vision\nThese skills are directly applicable to the modern financial sector. I plan to leverage automated reporting to enhance audit efficiency and use data analytics for strategic SME consulting. This ePortfolio serves as a foundation for my journey as a tech-enabled financial professional."
+    "text": "Note1. Key Reflections\n\n\n\nAs an Accounting and Finance student, this module has been a significant bridge between traditional reporting and modern data science. The most valuable takeaway was moving beyond spreadsheets to a professional VS Code workflow. Integrating Python directly into reports ensures data integrity and transparency, which are essential for modern auditing and reproducible financial analysis.\n\n\n\n\n\n\n\n\nImportant2. Challenges & Troubleshooting\n\n\n\nThe transition to web development presented real technical hurdles. I initially struggled with Git configuration and encountered errors during deployment. Successfully troubleshooting these—specifically learning to manage asset paths and manually point the GitHub Pages source to the /docs folder—greatly enhanced my technical resilience and attention to detail.\n\n\n\n\n\n\n\n\nTip3. Future Strategic Vision\n\n\n\nThese skills provide a solid foundation for my journey as a tech-enabled financial professional. I plan to leverage automated reporting to enhance audit efficiency and use data analytics for strategic consulting. This ePortfolio serves as the first step in my goal to bridge the gap between financial expertise and technological innovation."
   },
   {
     "objectID": "projects/list/project1_financial_analysis.html",

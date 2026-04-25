@@ -10,25 +10,17 @@ format:
 ---
 
 ::: {.callout-note appearance="minimal"}
-## **1. Technical Mastery: Beyond the Spreadsheet**
-As an Accounting and Finance student, my traditional focus was on static reporting. This module introduced me to a reproducible workflow:
-* Git & Version Control: Moving from bulk uploads to incremental commits showed me how to professionally track progress.
-* Quarto Ecosystem: Integrating Python code directly into digital reports ensures data integrity—a critical requirement for modern auditing.
-:::
-
-::: {.callout-tip appearance="minimal"}
-## **2. Analytical Innovation with Python**
-Using active Python code chunks instead of screenshots was a major step forward. 
-* Interactive Viz: Implementing Plotly waterfall charts allowed for a more dynamic exploration of profit erosion compared to traditional Excel charts.
-* Code Transparency: Utilizing code-fold allows me to maintain a professional executive summary while keeping the technical methodology accessible.
+## 1. Key Reflections
+As an Accounting and Finance student, this module has been a significant bridge between traditional reporting and modern data science. The most valuable takeaway was moving beyond spreadsheets to a professional VS Code workflow. Integrating Python directly into reports ensures data integrity and transparency, which are essential for modern auditing and reproducible financial analysis.
 :::
 
 ::: {.callout-important appearance="minimal"}
-## **3. Overcoming Deployment Challenges**
-The transition to web development was not without hurdles. Configuring the _quarto.yml navigation and managing asset paths required meticulous attention to detail. Successfully deploying this ePortfolio to GitHub Pages demonstrated my ability to troubleshoot technical environments.
+## 2. Challenges & Troubleshooting
+The transition to web development presented real technical hurdles. I initially struggled with Git configuration and encountered errors during deployment. Successfully troubleshooting these—specifically learning to manage asset paths and manually point the GitHub Pages source to the /docs folder—greatly enhanced my technical resilience and attention to detail.
 :::
 
-## **Future Strategic Vision**
-These skills are directly applicable to the modern financial sector. I plan to leverage automated reporting to enhance audit efficiency and use data analytics for strategic SME consulting. This ePortfolio serves as a foundation for my journey as a tech-enabled financial professional.
+::: {.callout-tip appearance="minimal"}
+## 3. Future Strategic Vision
+These skills provide a solid foundation for my journey as a tech-enabled financial professional. I plan to leverage automated reporting to enhance audit efficiency and use data analytics for strategic consulting. This ePortfolio serves as the first step in my goal to bridge the gap between financial expertise and technological innovation.
 
 ---
